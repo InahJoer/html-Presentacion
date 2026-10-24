@@ -1,0 +1,309 @@
+/* ==========================================================================
+   Variables y Configuración Global
+   ========================================================================== */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0b0f19 100%);
+    --card-bg: rgba(22, 27, 34, 0.85);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --accent-color: #58a6ff;
+    --accent-hover: #79c0ff;
+    --badge-bg: rgba(88, 166, 255, 0.15);
+    --highlight-bg: rgba(255, 255, 255, 0.04);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    font-family: var(--font-family);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Contenedor Principal (Tarjeta de Presentación)
+   ========================================================================== */
+.profile-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    max-width: 800px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Encabezado y Avatar
+   ========================================================================== */
+.profile-header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.avatar-container {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, #58a6ff, #bc8cff);
+    box-shadow: 0 8px 25px rgba(88, 166, 255, 0.35);
+    transition: var(--transition-smooth);
+}
+
+.avatar-container:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 12px 30px rgba(188, 140, 255, 0.5);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 35% 30%;
+    border-radius: 50%;
+    display: block;
+    background-color: #21262d;
+}
+
+.main-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ffffff, #c9d1d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-badge {
+    display: inline-block;
+    background-color: var(--badge-bg);
+    color: var(--accent-color);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid rgba(88, 166, 255, 0.3);
+}
+
+/* ==========================================================================
+   Secciones Generales
+   ========================================================================== */
+section {
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-hover);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: var(--card-border);
+    margin-left: 10px;
+}
+
+/* ==========================================================================
+   Presentación / Bio
+   ========================================================================== */
+.bio-section p {
+    color: #c9d1d9;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+/* ==========================================================================
+   Bloques de Interés
+   ========================================================================== */
+.interest-block {
+    background: var(--highlight-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.interest-block:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(88, 166, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.block-banner-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    filter: brightness(0.9);
+    transition: var(--transition-smooth);
+    display: block;
+}
+
+.interest-block:hover .block-banner-img {
+    filter: brightness(1.05);
+    transform: scale(1.01);
+}
+
+.interest-block h3 {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.interest-block p {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+}
+
+/* Lista de Lecturas en dos columnas responsivas */
+.reading-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.reading-list li {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 14px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-color);
+    font-size: 0.92rem;
+    color: #e6edf3;
+    transition: var(--transition-smooth);
+}
+
+.reading-list li:hover {
+    background: rgba(88, 166, 255, 0.12);
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Enlaces a Sitios Favoritos
+   ========================================================================== */
+.links-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+}
+
+.site-link {
+    text-decoration: none;
+    background: var(--highlight-bg);
+    border: 1px solid var(--card-border);
+    padding: 14px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: var(--transition-smooth);
+}
+
+.site-link .link-icon {
+    font-size: 1.5rem;
+}
+
+.site-link strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.site-link span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.3;
+}
+
+.site-link:hover {
+    background: rgba(88, 166, 255, 0.15);
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(88, 166, 255, 0.2);
+}
+
+.site-link:hover strong {
+    color: var(--accent-hover);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.profile-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--card-border);
+}
+
+.profile-footer p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 600px) {
+    .profile-card {
+        padding: 24px 18px;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .reading-list,
+    .links-list {
+        grid-template-columns: 1fr;
+    }
+}
