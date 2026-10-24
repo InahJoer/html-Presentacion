@@ -43,9 +43,9 @@ Tarea HTML/
 
 ## 🚀 Cómo Visualizar el Proyecto
 
-1. Clona o descarga este repositorio:
+1. Clona este repositorio:
    ```bash
-   git clone <URL_DE_TU_REPOSITORIO>
+   git clone https://github.com/InahJoer/html-Presentacion.git
    ```
 2. Abre la carpeta del proyecto.
 3. Haz doble clic en el archivo `index.html` o ábrelo directamente en cualquier navegador web moderno (Chrome, Firefox, Edge, Safari).
@@ -55,6 +55,8 @@ Tarea HTML/
 
 ## 👤 Información del Estudiante
 
+- **Nombre:** Joe Ernesto González Ramos
+- **GitHub:** [@InahJoer](https://github.com/InahJoer)
 - **Rol:** Analista de Datos en Dragontec (Samsung) | Creador técnico en Roblox & Gamer.
 - **Intereses:** Fútbol (Manchester United), Creación de scripts/models/VFX en Roblox, Literatura y Manga (Red Rising, Dune, Fundación, Tezuka, etc.).
 - **Sitios Favoritos:** MyAnimeList, Letterboxd, Pokémon Showdown.
