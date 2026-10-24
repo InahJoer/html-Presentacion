@@ -36,8 +36,8 @@ Tarea HTML/
 
 - **Diseño Responsivo:** Adaptable a dispositivos móviles y escritorios mediante Grid y Flexbox.
 - **Efectos y Microinteracciones:** Transiciones suaves (`transition`), efectos hover en tarjetas y enlaces, sombras profundas y esquinas redondeadas.
-- **Tipografía Moderna:** Importación de fuente web optimizada (*Outfit* vía Google Fonts).
-- **Paleta de Colores Curada:** Variables CSS (`:root`) con tema oscuro moderno estilo glassmorphism.
+- **Tipografía Editorial:** Importación de fuentes tipográficas (*Cinzel* para encabezados y *Plus Jakarta Sans* para lectura vía Google Fonts).
+- **Paleta de Colores Natural y Orgánica:** Variables CSS (`:root`) con estética inspirada en el arte y tinta *sumi-e* de *Vagabond* (tonos carbón profundo, pergamino cálido, terracota y ocres naturales).
 
 ---
 

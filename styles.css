@@ -1,18 +1,23 @@
 /* ==========================================================================
-   Variables y Configuración Global
+   Variables y Paleta Orgánica (Inspirada en la estética Vagabond / Sumi-e)
    ========================================================================== */
 :root {
-    --bg-gradient: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0b0f19 100%);
-    --card-bg: rgba(22, 27, 34, 0.85);
-    --card-border: rgba(255, 255, 255, 0.1);
-    --text-primary: #f0f6fc;
-    --text-secondary: #8b949e;
-    --accent-color: #58a6ff;
-    --accent-hover: #79c0ff;
-    --badge-bg: rgba(88, 166, 255, 0.15);
-    --highlight-bg: rgba(255, 255, 255, 0.04);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --bg-gradient: radial-gradient(ellipse at 50% 15%, #24211d 0%, #151413 55%, #0c0b0a 100%);
+    --card-bg: rgba(26, 24, 22, 0.94);
+    --card-border: rgba(198, 180, 153, 0.14);
+    --card-inner-border: rgba(198, 180, 153, 0.07);
+    --text-primary: #eee8df;
+    --text-secondary: #a79e92;
+    --text-muted: #797166;
+    --accent-color: #bd7a44;
+    --accent-hover: #d7945d;
+    --badge-bg: rgba(189, 122, 68, 0.12);
+    --badge-border: rgba(189, 122, 68, 0.28);
+    --highlight-bg: rgba(238, 232, 223, 0.025);
+    --highlight-border: rgba(198, 180, 153, 0.08);
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -25,35 +30,36 @@ body {
     min-height: 100vh;
     background: var(--bg-gradient);
     background-attachment: fixed;
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     color: var(--text-primary);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
-    line-height: 1.6;
+    padding: 48px 20px;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
 }
 
 /* ==========================================================================
-   Contenedor Principal (Tarjeta de Presentación)
+   Tarjeta Principal (Estilo Washi Oscuro / Tinta)
    ========================================================================== */
 .profile-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    max-width: 800px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    max-width: 820px;
     width: 100%;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
-    animation: fadeIn 0.8s ease-out;
+    border-radius: 16px;
+    padding: 44px 40px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    animation: fadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(24px);
     }
     to {
         opacity: 1;
@@ -66,25 +72,25 @@ body {
    ========================================================================== */
 .profile-header {
     text-align: center;
-    margin-bottom: 35px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--card-inner-border);
 }
 
 .avatar-container {
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 20px;
+    width: 164px;
+    height: 164px;
+    margin: 0 auto 22px;
     border-radius: 50%;
     padding: 4px;
-    background: linear-gradient(135deg, #58a6ff, #bc8cff);
-    box-shadow: 0 8px 25px rgba(88, 166, 255, 0.35);
+    background: linear-gradient(145deg, #bd7a44 0%, #685340 50%, #2f2720 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(189, 122, 68, 0.2);
     transition: var(--transition-smooth);
 }
 
 .avatar-container:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 12px 30px rgba(188, 140, 255, 0.5);
+    transform: scale(1.04);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), 0 0 28px rgba(215, 148, 93, 0.3);
 }
 
 .profile-img {
@@ -94,113 +100,128 @@ body {
     object-position: 35% 30%;
     border-radius: 50%;
     display: block;
-    background-color: #21262d;
+    background-color: #1a1816;
 }
 
 .main-title {
+    font-family: var(--font-heading);
     font-size: 2.2rem;
     font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg, #ffffff, #c9d1d9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    color: var(--text-primary);
 }
 
 .role-badge {
     display: inline-block;
     background-color: var(--badge-bg);
-    color: var(--accent-color);
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 0.95rem;
+    color: var(--accent-hover);
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 0.92rem;
     font-weight: 500;
-    border: 1px solid rgba(88, 166, 255, 0.3);
+    letter-spacing: 0.02em;
+    border: 1px solid var(--badge-border);
 }
 
 /* ==========================================================================
-   Secciones Generales
+   Secciones y Títulos
    ========================================================================== */
 section {
-    margin-bottom: 32px;
+    margin-bottom: 34px;
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
     font-weight: 600;
-    color: var(--accent-hover);
-    margin-bottom: 14px;
+    letter-spacing: 0.03em;
+    color: var(--accent-color);
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    position: relative;
+    gap: 12px;
 }
 
 h2::after {
     content: '';
     flex-grow: 1;
     height: 1px;
-    background: var(--card-border);
-    margin-left: 10px;
+    background: linear-gradient(90deg, var(--card-border) 0%, transparent 100%);
 }
 
 /* ==========================================================================
    Presentación / Bio
    ========================================================================== */
 .bio-section p {
-    color: #c9d1d9;
-    font-size: 1.05rem;
+    color: #ded7cc;
+    font-size: 1.02rem;
     text-align: justify;
+    line-height: 1.75;
+}
+
+.bio-section strong {
+    color: var(--text-primary);
+}
+
+.bio-section em {
+    color: var(--accent-hover);
+    font-style: normal;
+    font-weight: 600;
 }
 
 /* ==========================================================================
-   Bloques de Interés
+   Bloques de Interés & Banners
    ========================================================================== */
 .interest-block {
     background: var(--highlight-bg);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--highlight-border);
     border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 20px;
+    padding: 16px;
+    margin-bottom: 22px;
     overflow: hidden;
     transition: var(--transition-smooth);
 }
 
 .interest-block:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(88, 166, 255, 0.3);
+    background: rgba(238, 232, 223, 0.045);
+    border-color: rgba(189, 122, 68, 0.35);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
 .block-banner-img {
     width: 100%;
-    height: 160px;
+    height: 170px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 14px;
-    filter: brightness(0.9);
+    filter: brightness(0.85) sepia(12%) contrast(1.05);
     transition: var(--transition-smooth);
     display: block;
 }
 
 .interest-block:hover .block-banner-img {
-    filter: brightness(1.05);
+    filter: brightness(1) sepia(0%) contrast(1);
     transform: scale(1.01);
 }
 
-.interest-block h3 {
+.block-content h3 {
+    font-family: var(--font-heading);
     font-size: 1.15rem;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 6px;
+    letter-spacing: 0.02em;
 }
 
-.interest-block p {
+.block-content p {
     color: var(--text-secondary);
-    font-size: 0.98rem;
+    font-size: 0.96rem;
+    line-height: 1.6;
 }
 
-/* Lista de Lecturas en dos columnas responsivas */
+/* Lista de Lecturas (Libros y Mangas) */
 .reading-list {
     list-style: none;
     display: grid;
@@ -210,17 +231,18 @@ h2::after {
 }
 
 .reading-list li {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 8px 14px;
-    border-radius: 8px;
+    background: rgba(238, 232, 223, 0.03);
+    padding: 9px 14px;
+    border-radius: 6px;
     border-left: 3px solid var(--accent-color);
     font-size: 0.92rem;
-    color: #e6edf3;
+    color: #e4ddd3;
     transition: var(--transition-smooth);
 }
 
 .reading-list li:hover {
-    background: rgba(88, 166, 255, 0.12);
+    background: rgba(189, 122, 68, 0.12);
+    border-left-color: var(--accent-hover);
     transform: translateX(4px);
 }
 
@@ -237,9 +259,9 @@ h2::after {
 .site-link {
     text-decoration: none;
     background: var(--highlight-bg);
-    border: 1px solid var(--card-border);
-    padding: 14px 16px;
-    border-radius: 12px;
+    border: 1px solid var(--highlight-border);
+    padding: 14px 18px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -248,27 +270,29 @@ h2::after {
 
 .site-link .link-icon {
     font-size: 1.5rem;
+    filter: grayscale(20%);
 }
 
 .site-link strong {
     display: block;
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: 0.98rem;
     margin-bottom: 2px;
+    letter-spacing: 0.01em;
 }
 
 .site-link span {
     display: block;
     color: var(--text-secondary);
     font-size: 0.82rem;
-    line-height: 1.3;
+    line-height: 1.35;
 }
 
 .site-link:hover {
-    background: rgba(88, 166, 255, 0.15);
+    background: rgba(189, 122, 68, 0.12);
     border-color: var(--accent-color);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(88, 166, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .site-link:hover strong {
@@ -276,30 +300,36 @@ h2::after {
 }
 
 /* ==========================================================================
-   Footer
+   Pie de Página
    ========================================================================== */
 .profile-footer {
     text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid var(--card-border);
+    margin-top: 42px;
+    padding-top: 22px;
+    border-top: 1px solid var(--card-inner-border);
 }
 
 .profile-footer p {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 0.85rem;
+    letter-spacing: 0.02em;
 }
 
 /* ==========================================================================
-   Responsive Design
+   Diseño Responsivo
    ========================================================================== */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .profile-card {
-        padding: 24px 18px;
+        padding: 28px 20px;
+        border-radius: 12px;
     }
 
     .main-title {
         font-size: 1.8rem;
+    }
+
+    .block-banner-img {
+        height: 140px;
     }
 
     .reading-list,
